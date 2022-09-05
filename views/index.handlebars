@@ -1,0 +1,24 @@
+<div class="bg-light p-5 rounded-lg m-3">
+  <h1 class="display-4">App Message</h1>
+  <p class="lead">Escreva uma mensagem, escreva o que você quiser!</p>
+  <hr class="my-4">
+  <a href="/messages/message">
+    <button type="button" class="btn btn-primary">Deixe sua mensagem</button>
+  </a>
+</div>
+
+<h2>Latest messages</h2>
+
+<div class="d-flex p-4 flex-wrap gap-5 justify-content-center">
+  {{#each messages}}
+    <div class="card mt-2 w-25">
+      <div class="card-body">
+        <h4 class="card-title">{{name}}</h4>
+        <hr class="my-2">
+        <p class="card-text">{{message}}</p>
+      </div>
+    </div>
+  {{else}}
+    <h4>Nenhuma mensagem</h4>
+  {{/each}}
+</div>
