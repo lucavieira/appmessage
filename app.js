@@ -12,6 +12,8 @@ const app = express()
 
 const messages = require('./routes/user') // Rotas
 
+app.use('/favicon.ico', express.static(__dirname + 'public/images/favicon.ico'));
+
 // Session
 app.use(session({
   secret: 'message_app',
