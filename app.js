@@ -39,7 +39,7 @@ app.engine('handlebars', handlebars.engine({defaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
 
 // Conexão com o banco de dados
-mongoose.connect(mongoURI).then(() => {
+mongoose.connect(process.env.mongoURI).then(() => {
   console.log('Success')
 }).catch(error => {
   console.log('Failed' + error)
