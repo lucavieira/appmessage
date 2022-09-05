@@ -1,7 +1,7 @@
 const express = require('express') // Criação do servidor
 const mongoose = require('mongoose') // Banco de dados para armazenamento
 const handlebars = require('express-handlebars') // Template para o front
-const database = require('./config/database') // Configurações do banco de dados
+// const database = require('./config/database') // Configurações do banco de dados
 const body_parser = require('body-parser') // Pegar os valores do formulario
 const path = require('path')
 const session = require('express-session') // Armazena os dados da sessão no servidor, salva apenas o ID no cookie.
@@ -39,7 +39,7 @@ app.engine('handlebars', handlebars.engine({defaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
 
 // Conexão com o banco de dados
-mongoose.connect(database.mongoURI).then(() => {
+mongoose.connect(mongoURI).then(() => {
   console.log('Success')
 }).catch(error => {
   console.log('Failed' + error)
