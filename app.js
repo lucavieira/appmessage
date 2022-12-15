@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express') // Criação do servidor
 const mongoose = require('mongoose') // Banco de dados para armazenamento
 const handlebars = require('express-handlebars') // Template para o front
@@ -57,7 +58,7 @@ app.get('/', (req, res) => {
 
 app.use('/messages', messages)
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 5000
 
 app.listen(PORT, () => {
   console.log('Server is running...')
